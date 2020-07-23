@@ -1,0 +1,1 @@
+export const SearchListType = "SEARCH_LIST_TYPE";

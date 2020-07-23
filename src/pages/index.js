@@ -40,3 +40,18 @@ export const City = loadable({
   loader:()=>import("./city"),
   loading:Loading
 })
+
+export const Search = loadable({
+  loader:()=>import("./search"),
+  loading:Loading
+})
+
+export const Limitedtime = loadable({
+  loader:()=>import("./limitedtime"),
+  loading:Loading
+})
+
+export const Detail = loadable({
+  loader:()=>import("./detail"),
+  loading:Loading
+})

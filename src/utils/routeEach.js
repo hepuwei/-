@@ -30,25 +30,31 @@ export default (routes) => {
     }
 
     function childrenMap(childNodes) {
-        return <Route path={childNodes.path}  key={childNodes.path} render={() => {
-            return (
+        return (
+            <Route path={childNodes.path} key={childNodes.path} render={()=>{
+              return (
                 <Fragment>
-                    <Route component={childNodes.component} />
+                    <Route component={childNodes.component}/>
                     <Switch>
                         {
-                            childNodes.children.map((child) => {
-                                if (child.children) {
-                                    return childrenMap(child)
-                                } else {
-                                    return isLogin(child)
-                                }
+                            childNodes.children.map((child)=>{
+                                return (
+                                    <Route path={child.path} key={child.path} render={()=>{
+                                        if(child.children){
+                                            return childrenMap(child)
+                                        }else{
+                                            return isLogin(child)
+                                        }
+                                    }}/>
+                                )
                             })
                         }
-                        <Redirect from={childNodes.path} to={childNodes.children[0].path} />
+                        <Redirect from={childNodes.path} to={childNodes.children[0].path}/>
                     </Switch>
                 </Fragment>
-            )
-        }} />
+              )  
+            }}/>
+        )
     }
     return routes.map((route) => {
         if (route.children) {

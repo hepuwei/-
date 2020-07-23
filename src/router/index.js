@@ -1,4 +1,4 @@
-import {Goodthing,Market,Shoping,World,Mine,Login,City} from "pages";
+import {Detailimg,Some,Detail,Goodthing,Market,Shoping,World,Mine,Login,City,Search,Limitedtime} from "pages";
 
 export const TabBarRoute=[
   {
@@ -62,6 +62,27 @@ export const NoTabBarRoute = [
     meta:{
         flag:false
     }
+  },
+  {
+    path:"/search",
+    component:Search,
+    meta:{
+        flag:false
+    },
+  },
+  {
+    path:"/limitedtime",
+    component:Limitedtime,
+    meta:{
+      flag:false
+    }
+  },
+  {
+    path:"/detail",
+    component:Detail,
+    meta:{
+      flag:false
+    },
   }
 ]
 

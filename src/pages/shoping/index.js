@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import {PageContainer} from "common/styled"
+
 
 class Shoping extends Component {
   render() {
     return (
-      <div>
+      <PageContainer>
         Shoping
-      </div>
+      </PageContainer>
+      
     );
   }
 }
